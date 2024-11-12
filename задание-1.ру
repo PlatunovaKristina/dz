@@ -1,14 +1,14 @@
-a=int (input())
-b=int (input())
-c=int (input())
+def funct():
+    a = int(input())  
+    b = 2
+    c = 3
 
-if a < 0:
-  a = -1
+    if a < 0:
+        return -1  
 
-if a > 0:
-  max (a,b,c)
+    if a > 0:
+        m = max(a, b, c)  
+        return m
 
-  print(max(a,b,c))
-
-else:
-    print(-1)
+result = funct()
+print(result)
