@@ -1,0 +1,45 @@
+import time
+import random
+                                    #сортировка выбором
+
+def sel_sort(row):
+    n = len(row)
+    for i in range(n-1):
+        m = i
+        for j in range(i+1, n):
+            if row[j] > row[m]:
+                m = j
+        row[i], row[m] = row[m], row[i]
+
+
+arr = [random.randint(1, 100) for _ in range(1000000)]
+
+sel_sort(arr)
+print(arr)
+
+                                  # Сортировка массива по убыванию пузырьковой сортировкой
+
+def bubble_sort(arr):
+  n = len(arr)
+  for i in range(n):
+    for j in range(0, n-i-1):
+      if arr[j] < arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+  return arr
+
+array = [random.randint(1, 100) for _ in range(1000000)]
+sorted_array = bubble_sort(array)
+print(array)
+
+
+startTime = time.time()
+startTime1 = time.time()
+
+sortedArr = sel_sort(arr)
+sortedArray = bubble_sort(array)
+
+sel_sortTime = time.time() - startTime
+bubble_sortTime = time.time() - startTime1
+
+print(sel_sortTime);
+print(bubble_sortTime);
